@@ -8,5 +8,5 @@ module.exports = {
   modulePathIgnorePatterns: [
     "<rootDir>/lib/"
   ],
-  roots: ["<rootDir>/src/"]
+  roots: ["<rootDir>/src/"],
 };
