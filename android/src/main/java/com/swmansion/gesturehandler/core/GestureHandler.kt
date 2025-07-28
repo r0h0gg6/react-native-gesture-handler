@@ -14,7 +14,6 @@ import com.facebook.react.bridge.ReactContext
 import com.facebook.react.bridge.UiThreadUtil
 import com.facebook.react.bridge.WritableArray
 import com.facebook.react.uimanager.PixelUtil
-import com.swmansion.gesturehandler.BuildConfig
 import com.swmansion.gesturehandler.RNSVGHitTester
 import com.swmansion.gesturehandler.react.RNGestureHandlerTouchEvent
 import java.lang.IllegalStateException
@@ -350,7 +349,7 @@ open class GestureHandler<ConcreteGestureHandlerT : GestureHandler<ConcreteGestu
     }
 
     // a workaround for https://github.com/software-mansion/react-native-gesture-handler/issues/1188
-    val (adaptedTransformedEvent, adaptedSourceEvent) = if (BuildConfig.DEBUG) {
+    val (adaptedTransformedEvent, adaptedSourceEvent) = if (false) {
       arrayOf(adaptEvent(transformedEvent), adaptEvent(sourceEvent))
     } else {
       try {

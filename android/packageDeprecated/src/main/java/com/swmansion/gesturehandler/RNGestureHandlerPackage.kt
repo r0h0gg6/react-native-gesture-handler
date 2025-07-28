@@ -72,7 +72,7 @@ class RNGestureHandlerPackage : BaseReactPackage(), ViewManagerOnDemandReactPack
             reactModule.canOverrideExistingModule,
             reactModule.needsEagerInit,
             reactModule.isCxxModule,
-            true
+            false
           )
         )
       }

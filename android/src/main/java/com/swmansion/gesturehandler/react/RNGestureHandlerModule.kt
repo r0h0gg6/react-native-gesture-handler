@@ -15,7 +15,6 @@ import com.facebook.react.uimanager.PixelUtil
 import com.facebook.react.uimanager.events.Event
 import com.facebook.soloader.SoLoader
 import com.swmansion.common.GestureHandlerStateManager
-import com.swmansion.gesturehandler.BuildConfig
 import com.swmansion.gesturehandler.NativeRNGestureHandlerModuleSpec
 import com.swmansion.gesturehandler.ReanimatedEventDispatcher
 import com.swmansion.gesturehandler.core.FlingGestureHandler
@@ -553,7 +552,7 @@ class RNGestureHandlerModule(reactContext: ReactApplicationContext?) :
         sendEventForNativeAnimatedEvent(event)
       } else if (handler.actionType == GestureHandler.ACTION_TYPE_JS_FUNCTION_OLD_API) {
         // JS function, Animated.event with useNativeDriver: false using old API
-        if (BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {
+        if (false) {
           val data = RNGestureHandlerEvent.createEventData(handlerFactory.createEventBuilder(handler))
           sendEventForDeviceEvent(RNGestureHandlerEvent.EVENT_NAME, data)
         } else {
@@ -585,7 +584,7 @@ class RNGestureHandlerModule(reactContext: ReactApplicationContext?) :
       handler.actionType == GestureHandler.ACTION_TYPE_JS_FUNCTION_OLD_API
     ) {
       // JS function or Animated.event with useNativeDriver: false with old API
-      if (BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {
+      if (false) {
         val data = RNGestureHandlerStateChangeEvent.createEventData(handlerFactory.createEventBuilder(handler), newState, oldState)
         sendEventForDeviceEvent(RNGestureHandlerStateChangeEvent.EVENT_NAME, data)
       } else {
@@ -623,7 +622,7 @@ class RNGestureHandlerModule(reactContext: ReactApplicationContext?) :
 
   private fun <T : Event<T>>sendEventForReanimated(event: T) {
     // Delivers the event to Reanimated.
-    if (BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {
+    if (false) {
       // Send event directly to Reanimated
       reanimatedEventDispatcher.sendEvent(event, reactApplicationContext)
     } else {
